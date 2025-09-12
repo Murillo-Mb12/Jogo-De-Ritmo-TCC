@@ -1,0 +1,18 @@
+# Godot 3.x
+
+.import/
+.godot/
+.mono/
+.vscode/
+.idea/
+.project
+
+*.import
+*.stex
+*.tmp
+*.exe
+*.pdb
+
+.DS_Store
+Thumbs.db
+desktop.ini
