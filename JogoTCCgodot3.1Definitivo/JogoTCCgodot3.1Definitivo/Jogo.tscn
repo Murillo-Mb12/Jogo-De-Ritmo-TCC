@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Jogo.gd" type="Script" id=1]
+[ext_resource path="res://Trilha.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Musica.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+
+[node name="Jogo" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Trilha" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera" type="Camera" parent="Trilha"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 8.6748, -5.47701 )
+
+[node name="Camera" type="Camera" parent="Trilha/Camera"]
+transform = Transform( 1, 0, 0, 0, 0.460503, -0.887658, 0, 0.887658, 0.460503, 0, -6.77672, -7.09147 )
+current = true
+
+[node name="Musica" parent="." instance=ExtResource( 3 )]
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="HUDLayer" instance=ExtResource( 4 )]
