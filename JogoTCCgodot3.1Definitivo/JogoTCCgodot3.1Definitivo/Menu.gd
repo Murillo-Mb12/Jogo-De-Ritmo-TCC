@@ -29,7 +29,9 @@ func _on_settings_pressed():
 func _on_profile_pressed():
     var dialog = AcceptDialog.new()
     add_child(dialog)
-    dialog.dialog_text = "Nome: Jogador\nPontuação Máxima: 0"
+    var user = Profiles.get_username()
+    var score = Profiles.get_highscore()
+    dialog.dialog_text = "Nome: %s\nPontuação Máxima: %d" % [user, score]
     dialog.popup_centered()
 
 # Sai do jogo

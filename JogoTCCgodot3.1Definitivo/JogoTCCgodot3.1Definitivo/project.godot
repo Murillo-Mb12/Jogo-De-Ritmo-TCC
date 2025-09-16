@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="JodoTCC"
-run/main_scene="res://Menu.tscn"
+run/main_scene="res://Login.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Profiles="*res://Profiles.gd"
 
 [rendering]
 
