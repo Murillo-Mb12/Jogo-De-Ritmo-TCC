@@ -1,31 +1,25 @@
 extends Control
 
-# Referências aos botões do menu
 onready var play_button = $MarginContainer/VBoxContainer/Play
 onready var settings_button = $MarginContainer/VBoxContainer/Settings
 onready var profile_button = $MarginContainer/VBoxContainer/Perfil
+onready var creditos_button = $MarginContainer/VBoxContainer/Creditos
 onready var quit_button = $MarginContainer/VBoxContainer/Sair
 
 func _ready():
-    # Conecta os botões aos métodos correspondentes
     play_button.connect("pressed", self, "_on_play_pressed")
     settings_button.connect("pressed", self, "_on_settings_pressed")
     profile_button.connect("pressed", self, "_on_profile_pressed")
+    creditos_button.connect("pressed", self, "_on_creditos_pressed")
     quit_button.connect("pressed", self, "_on_quit_pressed")
 
-# -------------------------
-# FUNÇÕES DOS BOTÕES
-# -------------------------
-
-# Inicia o jogo
+# Agora abre o seletor de fases
 func _on_play_pressed():
-    get_tree().change_scene("res://Jogo.tscn")
+    get_tree().change_scene("res://SeletorFase.tscn")
 
-# Vai para as configurações
 func _on_settings_pressed():
     get_tree().change_scene("res://Settings.tscn")
 
-# Mostra um diálogo com perfil (ainda básico)
 func _on_profile_pressed():
     var dialog = AcceptDialog.new()
     add_child(dialog)
@@ -34,6 +28,8 @@ func _on_profile_pressed():
     dialog.dialog_text = "Nome: %s\nPontuação Máxima: %d" % [user, score]
     dialog.popup_centered()
 
-# Sai do jogo
+func _on_creditos_pressed():
+    get_tree().change_scene("res://Creditos.tscn")
+
 func _on_quit_pressed():
     get_tree().quit()
